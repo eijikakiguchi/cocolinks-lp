@@ -244,20 +244,44 @@ h4 {
     /* Per request for "quiet" feel, center often used in Japanese LPs. But user said "text as protagonist". Let's stick to center for now as it matches "About" */
 }
 
-.example-content ul {
+.example-heading {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Optional: Add a subtle separator under the heading to make it clear */
+.example-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.example-list {
     margin: var(--spacing-md) auto;
-    max-width: 300px;
-    /* Narrow list */
+    max-width: 400px;
+    /* Slightly wider for longer items */
     padding-left: 1.5em;
     text-align: left;
 }
 
-.example-content ul li {
+.example-list li {
     position: relative;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
+    /* Slightly more space between items */
+    line-height: 1.8;
 }
 
-.example-content ul li::before {
+.example-list li::before {
     content: "・";
     position: absolute;
     left: -1em;
@@ -266,7 +290,7 @@ h4 {
 
 
 .example-reference {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
     font-size: 0.95rem;
     color: var(--text-color);
     text-align: center;
@@ -407,6 +431,69 @@ h4 {
     border: 2px solid var(--bg-color);
     /* create gap effect */
     z-index: 1;
+}
+
+/* FAQ Section */
+.section-faq {
+    padding: var(--spacing-xl) 0;
+    background-color: #FBFBFA;
+    /* Very slightly distinct from bg-color */
+}
+
+.faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item[open] {
+    background-color: #fff;
+    /* White background when open */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.faq-question {
+    padding: 1.2rem var(--spacing-md);
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    list-style: none;
+    /* Hide default triangle */
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 var(--spacing-md) var(--spacing-md);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.8;
 }
 
 /* Footer */
