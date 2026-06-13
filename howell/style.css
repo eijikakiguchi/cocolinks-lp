@@ -268,18 +268,6 @@ img, video {
   object-fit: cover;
 }
 
-/* Enhanced dark overlay on the video for copy readability */
-.video-overlay-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(28, 27, 26, 0.35) 0%, rgba(28, 27, 26, 0.65) 100%),
-              radial-gradient(circle, rgba(28, 27, 26, 0.2) 0%, rgba(28, 27, 26, 0.7) 100%);
-  pointer-events: none;
-  z-index: 2;
-}
 
 /* Overlaid Copy Content styling */
 .hero-overlay-content {
@@ -442,6 +430,60 @@ img, video {
   }
   .btn {
     padding: 1rem 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   Intro Message Section
+   ========================================================================== */
+.intro-message-section {
+  padding: 14rem 0;
+  background-color: var(--bg-primary);
+  text-align: center;
+}
+
+.intro-message-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-main-title {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.18em;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.intro-sub-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 2.4;
+  letter-spacing: 0.15em;
+  margin-bottom: 4rem;
+}
+
+.intro-cta {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .intro-message-section {
+    padding: 9rem 0;
+  }
+  .intro-main-title {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .intro-sub-title {
+    font-size: 1rem;
+    line-height: 2.1;
+    margin-bottom: 3rem;
   }
 }
 
