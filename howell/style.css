@@ -752,8 +752,10 @@ img, video {
     grid-template-columns: 1fr;
     gap: 0;
   }
-  .vision-image {
+  .vision-image, .vision-item.reverse .vision-image {
     z-index: 1;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
   }
   .vision-text, .vision-item.reverse .vision-text {
     margin-left: 0;
@@ -761,9 +763,8 @@ img, video {
     margin-top: -3rem;
     padding: 3rem 2rem;
     z-index: 2;
-  }
-  .vision-item.reverse .vision-text {
-    grid-row: 2;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
   }
 }
 
