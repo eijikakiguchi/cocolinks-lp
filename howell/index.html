@@ -15,19 +15,7 @@
   <meta property="og:locale" content="ja_JP">
   
   <!-- Favicon (Fallback to browser default if not supplied) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- Navigation -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>  <!-- Navigation -->
   <header class="site-header">
     <div class="header-container">
       <div class="site-logo">
@@ -35,11 +23,13 @@
       </div>
       <nav class="site-nav" aria-label="メインナビゲーション">
         <ul>
-          <li><a href="#about">About</a></li>
+          <li><a href="#why">Why</a></li>
+          <li><a href="#vision">Vision</a></li>
           <li><a href="#works">Works</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#hospitality">Use Cases</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#contact" class="nav-cta">Contact</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact" class="nav-cta">制作相談</a></li>
         </ul>
       </nav>
       <!-- Hamburger Menu for Mobile -->
@@ -51,7 +41,7 @@
   </header>
 
   <main>
-    <!-- Hero Section (Video Only Viewport) -->
+    <!-- Hero Section (Video & Overlaid Copy) -->
     <section class="hero-video-section" aria-label="イントロダクション動画">
       <div class="video-container">
         <video autoplay muted loop playsinline class="bg-video">
@@ -59,6 +49,21 @@
           お使いのブラウザは動画タグをサポートしていません。
         </video>
         <div class="video-overlay-gradient"></div>
+        <div class="hero-overlay-content">
+          <div class="hero-content-inner">
+            <h1 class="hero-main-title">まだ見ぬ日本の美しさを、<br class="mobile-break">映像で未来へ。</h1>
+            <p class="hero-sub-title">
+              小さな宿の温もり。<br class="mobile-break">
+              土地に根づく文化。<br class="mobile-break">
+              職人の手仕事。<br>
+              日本に眠る美しさを、映像で世界へ届けます。
+            </p>
+            <div class="hero-cta-wrapper">
+              <a href="#contact" class="btn btn-primary">制作について相談する</a>
+              <a href="#works" class="btn btn-outline">作品を見る</a>
+            </div>
+          </div>
+        </div>
         <div class="scroll-indicator">
           <span class="scroll-text">Scroll</span>
           <span class="scroll-line"></span>
@@ -66,36 +71,72 @@
       </div>
     </section>
 
-    <!-- Hero Copy Section (Text & CTA) -->
-    <section class="hero-copy-section fade-in-trigger">
+    <!-- Why We Create Section -->
+    <section id="why" class="why-section fade-in-trigger">
       <div class="section-container">
-        <h1 class="hero-main-title">その瞬間の空気まで、<br class="mobile-break">映像に残す。</h1>
-        <p class="hero-sub-title">和歌山から届ける、<br class="mobile-break">癒しと温もりの映像制作。</p>
-        <div class="hero-cta-wrapper">
-          <a href="#contact" class="btn btn-primary">お問い合わせする</a>
+        <div class="why-layout">
+          <div class="why-header">
+            <span class="section-sub">Why We Create</span>
+            <h2 class="section-title">なぜ映像を作るのか</h2>
+          </div>
+          <div class="why-content">
+            <p class="lead-text">
+              映像を作り続ける理由はシンプルです。<br>
+              まだ知られていない日本の美しさを伝えたいから。
+            </p>
+            <p class="body-text">
+              映像制作を始めて6年。全国を巡るなかで、何度も感じてきました。<br>
+              「まだまだ知らない美しい日本がある」と。
+            </p>
+            <p class="body-text">
+              それは壮大な自然だけではありません。<br>
+              小さな宿の温もり。職人の手仕事。土地に根づく食文化。<br>
+              その場に流れる空気や、人の温かさ。
+            </p>
+            <p class="body-text">
+              映像だからこそ残せるものがあります。<br>
+              映像を見た人が、その場所へ足を運びたくなる。そんな映像を作り続けています。
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section fade-in-trigger">
+    <!-- HOWELLが届けたい世界 Section -->
+    <section id="vision" class="vision-section fade-in-trigger">
       <div class="section-container">
-        <div class="about-layout">
-          <div class="about-header">
-            <span class="section-sub">About Howell</span>
-            <h2 class="section-title">癒しと温もりの<br class="mobile-break">お届け屋さん</h2>
+        <div class="section-header">
+          <span class="section-sub">Our Vision</span>
+          <h2 class="section-title">HOWELLが届けたい世界</h2>
+          <p class="section-intro">私たちはただ綺麗に記録する映像クリエイターではありません。<br>その奥にある本質をすくい上げ、未来へつなぐ「映像作家」です。</p>
+        </div>
+        <div class="vision-grid">
+          <div class="vision-item">
+            <div class="vision-image">
+              <img src="images/ryokan_story.png" alt="高級旅館の佇まいと温かい光" loading="lazy">
+            </div>
+            <div class="vision-text">
+              <h3 class="vision-item-title">宿が持つ物語を撮る</h3>
+              <p>単にお部屋や施設を写すのではありません。宿が紡いできた歴史や、そこに関わる人々の想い、訪れる人々を包み込む温もりなど、その宿だけの唯一無二の物語を描き出します。</p>
+            </div>
           </div>
-          <div class="about-content">
-            <p class="lead-text">
-              私たちは、単に美しい映像を切り取るクリエイターではありません。<br>
-              そこにある四季の移ろい、吹き抜ける風の心地よさ、そして交わされる温かな眼差し。
-            </p>
-            <p class="body-text">
-              和歌山の豊かな自然に囲まれながら、旅をするようにカメラを回し、その土地や人が紡いできた「記憶」をすくい上げています。見終わったあとに、少しだけ心が穏やかになる。そんな「癒し」と「温もり」に満ちた空気感を映像に込めて、皆様にお届けします。
-            </p>
-            <p class="body-text">
-              時の流れの中で薄れていってしまうかもしれない大切な瞬間を、いつでも立ち返れる美しい映像体験として未来へと残します。
-            </p>
+          <div class="vision-item reverse">
+            <div class="vision-image">
+              <img src="images/artisan_hands.png" alt="職人の手元と木漏れ日" loading="lazy">
+            </div>
+            <div class="vision-text">
+              <h3 class="vision-item-title">土地の文化を撮る</h3>
+              <p>お料理をただ綺麗に見せるのではなく、その土地に根ざした食文化や、職人の指先から生まれる手仕事に宿る精神を、敬意を持って映像に刻みます。</p>
+            </div>
+          </div>
+          <div class="vision-item">
+            <div class="vision-image">
+              <img src="images/nature_air.png" alt="静寂な森と流れる霧" loading="lazy">
+            </div>
+            <div class="vision-text">
+              <h3 class="vision-item-title">その場に流れる空気を撮る</h3>
+              <p>景色を単に記録するのではなく、そこを流れる風 of 音、差し込む光の温度、肌で感じる静けさなど、AIには表現できない「その瞬間の空気感」を捉えます。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -106,15 +147,15 @@
       <div class="section-container">
         <div class="section-header">
           <span class="section-sub">Works</span>
-          <h2 class="section-title">記憶に語りかける映像</h2>
+          <h2 class="section-title">実績・制作事例</h2>
         </div>
         
         <div class="works-grid">
           <!-- Card 1 -->
           <article class="work-card">
             <div class="card-image-wrapper">
-              <!-- Inline style to simulate real video thumbnails with placeholder bg colors -->
-              <div class="placeholder-img" style="background-color: #E2DFD9;">
+              <img src="images/work_shiki.png" alt="和歌山の四季を巡る旅 — 紀伊半島の自然と余白" loading="lazy">
+              <div class="play-overlay">
                 <span class="play-icon" aria-hidden="true">▼</span>
               </div>
             </div>
@@ -128,7 +169,8 @@
           <!-- Card 2 -->
           <article class="work-card">
             <div class="card-image-wrapper">
-              <div class="placeholder-img" style="background-color: #DAD6CF;">
+              <img src="images/work_cafe.png" alt="木漏れ日の降る古民家カフェ — 日常の愛おしい時間" loading="lazy">
+              <div class="play-overlay">
                 <span class="play-icon" aria-hidden="true">▼</span>
               </div>
             </div>
@@ -142,7 +184,8 @@
           <!-- Card 3 -->
           <article class="work-card">
             <div class="card-image-wrapper">
-              <div class="placeholder-img" style="background-color: #E6E3DD;">
+              <img src="images/work_lifestyle.png" alt="人と調和するライフスタイル — 手のひらから伝わる温もり" loading="lazy">
+              <div class="play-overlay">
                 <span class="play-icon" aria-hidden="true">▼</span>
               </div>
             </div>
@@ -156,47 +199,64 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section fade-in-trigger">
+    <!-- Hospitality Section -->
+    <section id="hospitality" class="hospitality-section fade-in-trigger">
       <div class="section-container">
-        <div class="section-header">
-          <span class="section-sub">Services</span>
-          <h2 class="section-title">お届けできること</h2>
+        <div class="hospitality-layout">
+          <div class="hospitality-text-side">
+            <span class="section-sub">For Hotels & Ryokans</span>
+            <h2 class="section-title">安さではなく、<br>物語で選ばれる宿へ。</h2>
+            <p class="lead-text">大量集客ではなく、その土地の価値に共感するお客様との出会いを。</p>
+            <p class="body-text">HOWELLは、宿の魅力を映像で翻訳し、ブランドを育てます。言葉では伝えきれない、お部屋の木の温もり、お料理に込められた土地の文化、そこを流れる豊かな時間を映像で表現します。</p>
+          </div>
+          <div class="hospitality-cards-side">
+            <div class="use-case-card">
+              <div class="use-case-num">01</div>
+              <h3 class="use-case-title">ホームページ用ブランド映像</h3>
+              <p>公式Webサイトの顔として、滞在体験を疑似体験させ、予約意欲を高めるメインビジュアル。訪れた瞬間に宿の世界観に引き込みます。</p>
+            </div>
+            <div class="use-case-card">
+              <div class="use-case-num">02</div>
+              <h3 class="use-case-title">SNSショート動画（縦型）</h3>
+              <p>Instagram ReelsやTikTokなど、スマホで見やすい縦型動画。宿の魅力を一瞬で捉え、フォロワー80万人超の配信知見に基づいた構成で潜在層へ拡散します。</p>
+            </div>
+            <div class="use-case-card">
+              <div class="use-case-num">03</div>
+              <h3 class="use-case-title">周辺観光＆こだわりVlog</h3>
+              <p>宿の周辺エリアが持つ魅力や、シェフがこだわる土地の食材、関わっている地元の人々の想いを描くドキュメンタリー。宿の体験価値を広げます。</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="services-grid">
-          <!-- Service 1 -->
-          <div class="service-card">
-            <div class="service-icon-box">
-              <span class="service-icon">🎬</span>
-            </div>
-            <h3 class="service-card-title">映像制作</h3>
-            <p class="service-card-desc">
-              企業・店舗・ホテル・地方自治体の観光PRなど、その場所やブランドが持つ固有の価値を引き出し、洗練された一本のシネマティック映像に仕上げます。
-            </p>
+    <!-- SNS総フォロワー80万人超の配信力 Section -->
+    <section id="audience" class="audience-section fade-in-trigger">
+      <div class="section-container">
+        <div class="audience-header">
+          <span class="section-sub">Distribution Power</span>
+          <h2 class="section-title">映像制作 × SNS総フォロワー80万人の配信力</h2>
+          <p class="section-intro">映像を作るだけでなく、それを届ける力を持っています。SNSマーケティングの知見を活かした企画力で、制作した映像の価値を最大化します。</p>
+        </div>
+        <div class="audience-stats">
+          <div class="stat-card">
+            <span class="stat-number">43<span class="stat-unit">万</span></span>
+            <span class="stat-label">YouTube Subscribers</span>
+            <p class="stat-desc">Vlogやシネマティック映像を通じて、深い世界観に共感するファンが定着しています。</p>
           </div>
-
-          <!-- Service 2 -->
-          <div class="service-card">
-            <div class="service-icon-box">
-              <span class="service-icon">📱</span>
-            </div>
-            <h3 class="service-card-title">SNSコンテンツ制作</h3>
-            <p class="service-card-desc">
-              InstagramのReelsやYouTube向けに、視聴者の心に留まり、思わず引き込まれるような「美しく、心地よい」ショート動画・縦型コンテンツを企画制作します。
-            </p>
+          <div class="stat-card">
+            <span class="stat-number">17<span class="stat-unit">万</span></span>
+            <span class="stat-label">Instagram Followers</span>
+            <p class="stat-desc">日々の癒しや美しい日本の瞬間を切り取ったリール動画が広く拡散されています。</p>
           </div>
-
-          <!-- Service 3 -->
-          <div class="service-card">
-            <div class="service-icon-box">
-              <span class="service-icon">🍃</span>
-            </div>
-            <h3 class="service-card-title">ストーリー制作</h3>
-            <p class="service-card-desc">
-              その土地が持つ歴史や、人の内面から滲み出る情熱やこだわりを丁寧にヒアリングし、ドキュメンタリータッチで魅力的に映像化します。
-            </p>
+          <div class="stat-card">
+            <span class="stat-number">25<span class="stat-unit">万</span></span>
+            <span class="stat-label">TikTok Followers</span>
+            <p class="stat-desc">縦型ショート動画のトレンドを押さえた構成で、新たな旅行層へリーチします。</p>
           </div>
+        </div>
+        <div class="audience-total">
+          <p class="total-text">Total Audience <span class="highlight">800,000+</span></p>
         </div>
       </div>
     </section>
@@ -206,7 +266,16 @@
       <div class="section-container">
         <div class="section-header">
           <span class="section-sub">Process</span>
-          <h2 class="section-title">ご一緒する流れ</h2>
+          <h2 class="section-title">制作の流れ</h2>
+          
+          <!-- Quality badging -->
+          <div class="quality-badges">
+            <span class="badge">ショート初稿1週間以内</span>
+            <span class="badge">最短2週間納品</span>
+            <span class="badge">修正2回対応</span>
+            <span class="badge">ドローン撮影可能</span>
+            <span class="badge">写真提供あり</span>
+          </div>
         </div>
 
         <div class="process-timeline">
@@ -216,9 +285,9 @@
               <span class="step-num">01</span>
             </div>
             <div class="step-content">
-              <h3 class="step-title">お問い合わせ</h3>
+              <h3 class="step-title">制作についてのご相談</h3>
               <p class="step-desc">
-                まずは下記のお問い合わせフォーム（ボタン）より、お気軽にご連絡ください。大まかなイメージやご予算、ご希望の時期などを伺います。
+                当ページの相談フォームよりお気軽にご連絡ください。大まかなイメージやご予算、ご希望の時期などを伺います。
               </p>
             </div>
           </div>
@@ -229,9 +298,9 @@
               <span class="step-num">02</span>
             </div>
             <div class="step-content">
-              <h3 class="step-title">ヒアリング</h3>
+              <h3 class="step-title">ヒアリング＆プラン設計</h3>
               <p class="step-desc">
-                対面またはオンラインにて、じっくりとお話を伺います。映像を作る目的だけでなく、背景にある想いや大切にしている価値観を共有させてください。
+                オンラインまたは対面にて、宿やブランドの持つ想いを丁寧にお聞きします。現地でのロケーション撮影が可能かどうかも含めてすり合わせます。
               </p>
             </div>
           </div>
@@ -242,9 +311,9 @@
               <span class="step-num">03</span>
             </div>
             <div class="step-content">
-              <h3 class="step-title">企画・お見積り</h3>
+              <h3 class="step-title">企画・お見積りのご提案</h3>
               <p class="step-desc">
-                ヒアリングをもとに、構成案やビジュアルイメージをまとめた企画書、およびお見積書をご提案します。イメージの擦り合わせを丁寧に行います。
+                構成案やスケジュール、明確な費用を記載したお見積書をご提案します。イメージのズレを防ぐため、絵コンテやリファレンス動画等で共有します。
               </p>
             </div>
           </div>
@@ -255,9 +324,9 @@
               <span class="step-num">04</span>
             </div>
             <div class="step-content">
-              <h3 class="step-title">撮影・編集</h3>
+              <h3 class="step-title">撮影と編集（初稿提出）</h3>
               <p class="step-desc">
-                その瞬間の自然な光や表情、空気感を大切に撮影を行います。編集では、音や間隔（余白）の心地よさにこだわり、一つの作品へと落とし込みます。
+                ドローン空撮も含め、その場の空気感を最高品質で撮影します。ショート動画であれば1週間以内に初稿をお送りし、2回までの修正に対応します。
               </p>
             </div>
           </div>
@@ -268,10 +337,111 @@
               <span class="step-num">05</span>
             </div>
             <div class="step-content">
-              <h3 class="step-title">納品</h3>
+              <h3 class="step-title">納品・運用サポート</h3>
               <p class="step-desc">
-                最終確認と微調整を経て、完成した映像データをお届けします。YouTube、Webサイト、SNSなど様々なメディアでご活用いただけます。
+                最短2週間で、各種SNSやWebサイトに適した形式で映像データをお届けします。SNSでの効果的な公開方法や運用のコツについてもアドバイスいたします。
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section fade-in-trigger">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-sub">Pricing</span>
+          <h2 class="section-title">料金の目安</h2>
+          <p class="section-intro">ご要望に合わせた柔軟なプランをご用意しています。まずは相談ベースでのお問い合わせも歓迎です。</p>
+        </div>
+        <div class="pricing-grid">
+          <!-- Plan 1 -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <h3 class="plan-name">SNSショート動画プラン</h3>
+              <span class="plan-price">¥150,000〜</span>
+            </div>
+            <ul class="plan-features">
+              <li>縦型ショート動画 1〜2本</li>
+              <li>初稿提出: 1週間以内</li>
+              <li>修正対応: 2回まで</li>
+              <li>SNS配信に最適化された構成</li>
+            </ul>
+          </div>
+          <!-- Plan 2 -->
+          <div class="pricing-card popular">
+            <div class="pricing-card-header">
+              <span class="popular-tag">Recommended</span>
+              <h3 class="plan-name">プロモーションVlogプラン</h3>
+              <span class="plan-price">¥300,000〜</span>
+            </div>
+            <ul class="plan-features">
+              <li>シネマティックVlog 1本（3〜5分）</li>
+              <li>最短2週間納品</li>
+              <li>撮影・編集・音響デザイン含む</li>
+              <li>ホームページやYouTube用</li>
+            </ul>
+          </div>
+          <!-- Plan 3 -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <h3 class="plan-name">ブランドストーリープラン</h3>
+              <span class="plan-price">¥500,000〜</span>
+            </div>
+            <ul class="plan-features">
+              <li>メインブランド映像 1本 ＋ ショート数本</li>
+              <li>ドローン空撮対応</li>
+              <li>スチール写真（数十枚）無償提供</li>
+              <li>構成案の複数パターン提案</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section fade-in-trigger">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-sub">FAQ</span>
+          <h2 class="section-title">よくある質問</h2>
+        </div>
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>和歌山県外での撮影も可能ですか？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>はい、全国どこでも出張撮影が可能です。交通費・宿泊費が別途必要となる場合がございますが、まずはお気軽にご相談ください。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>ドローン撮影には追加料金が必要ですか？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>ブランドストーリープランではドローン撮影が基本料金に含まれております。その他のプランでもオプションとして追加可能です。航空法に基づく申請手続きもこちらで行います。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>撮影時間はどのくらいかかりますか？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>ショート動画やVlogプランの場合は1日（朝〜夜）での撮影が基本です。天候や季節の移ろいを取り入れたい場合は、複数日に分けての撮影も対応いたします。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>修正は何度まで対応していただけますか？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>すべてのプランで、初稿提出後2回までの修正に対応しております。3回目以降の大きな修正は追加費用をいただく場合がございます。</p>
             </div>
           </div>
         </div>
@@ -282,14 +452,12 @@
     <section id="contact" class="contact-section fade-in-trigger">
       <div class="section-container">
         <span class="section-sub">Contact</span>
-        <h2 class="contact-title">心穏やかになる映像を、<br>共につくりましょう。</h2>
+        <h2 class="contact-title">まだ見ぬ美しさを、<br>未来へ残す旅をご一緒しましょう。</h2>
         <p class="contact-text">
-          撮影のご依頼、ご相談、またはちょっとした質問など、どうぞお気軽にご連絡ください。<br>
-          あなたやその場所のストーリーをお聞きできることを楽しみにしています。
+          宿泊施設・地域ブランドのプロモーションから、写真提供を含めた撮影のご相談など、どうぞお気軽にご連絡ください。まずはオンラインでのカジュアルなご相談も可能です。
         </p>
         <div class="contact-cta">
-          <!-- Form is not implemented yet, just a link for CTA as requested -->
-          <a href="mailto:info@example.com?subject=映像制作に関するお問い合わせ" class="btn btn-secondary">お問い合わせする</a>
+          <a href="mailto:info@example.com?subject=映像制作に関するご相談" class="btn btn-secondary">制作について相談する</a>
         </div>
       </div>
     </section>
