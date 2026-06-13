@@ -711,6 +711,28 @@ img, video {
   margin-right: -5rem;
   grid-column: 1;
   grid-row: 1;
+  
+  /* PC版での美しい縦書き（エディトリアルデザイン）の再定義 */
+  writing-mode: vertical-rl;
+  height: 380px; /* 縦書きの文字が綺麗に収まる高さを十分に確保 */
+  display: block; /* 縦書き時のレイアウト崩れを防ぐためblockにする */
+}
+
+/* 縦書き内のタイトルと本文の余白調整 */
+.vision-item.reverse .vision-text .vision-item-title {
+  margin-bottom: 0;
+  margin-left: 2rem; /* 縦書きなのでタイトルの左側（本文との間）に余白を作る */
+  padding-bottom: 0;
+}
+
+/* 縦書き時にはタイトルの下線（横書き用）を非表示にする */
+.vision-item.reverse .vision-text .vision-item-title::after {
+  display: none;
+}
+
+.vision-item.reverse .vision-text p {
+  line-height: 2.2;
+  letter-spacing: 0.12em;
 }
 
 .vision-item.reverse .vision-image {
@@ -765,6 +787,23 @@ img, video {
     z-index: 2;
     grid-column: 1 !important;
     grid-row: 2 !important;
+    
+    /* 1024px以下（タブレット・スマホ）では縦書きを安全に解除 */
+    writing-mode: horizontal-tb !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* 縦書き解除に伴う余白と下線の再調整 */
+  .vision-item.reverse .vision-text .vision-item-title {
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 1.2rem;
+  }
+
+  .vision-item.reverse .vision-text .vision-item-title::after {
+    display: block !important; /* 横書き用のゴールド下線を再表示 */
   }
 }
 
@@ -1057,12 +1096,43 @@ img, video {
   border: 1px solid var(--border-color);
   padding: 4.5rem 2.5rem;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .stat-card:hover {
   border-color: var(--accent-gold);
   box-shadow: 0 15px 35px rgba(197, 168, 128, 0.06);
   transform: translateY(-5px);
+}
+
+/* SNSアイコンのラッパースタイル */
+.stat-icon-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  color: var(--accent-gold);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-icon-wrapper svg {
+  display: block;
+}
+
+/* カード全体ホバー時のアイコンのマイクロインタラクション */
+.stat-card:hover .stat-icon-wrapper {
+  background-color: var(--accent-gold);
+  color: var(--bg-primary);
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
 }
 
 .stat-number {
