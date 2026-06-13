@@ -125,7 +125,12 @@ img, video {
 }
 
 .site-logo a {
-  color: var(--text-primary);
+  color: #FFFFFF; /* スクロール前は白 */
+  transition: color 0.4s ease;
+}
+
+.site-header.scrolled .site-logo a {
+  color: var(--text-primary); /* スクロール後は黒 */
 }
 
 .site-nav ul {
@@ -140,9 +145,14 @@ img, video {
   font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.15em;
-  color: var(--text-primary);
+  color: rgba(255, 255, 255, 0.9); /* スクロール前は白 */
   position: relative;
   padding-bottom: 4px;
+  transition: color 0.4s ease;
+}
+
+.site-header.scrolled .site-nav a {
+  color: var(--text-primary); /* スクロール後は黒 */
 }
 
 .site-nav a::after {
@@ -164,7 +174,7 @@ img, video {
 }
 
 .site-nav a.nav-cta {
-  border: 1px solid var(--text-primary);
+  border: 1px solid #FFFFFF; /* スクロール前は白枠 */
   padding: 0.5rem 1.4rem;
   font-family: var(--font-serif);
   font-size: 0.85rem;
@@ -172,14 +182,23 @@ img, video {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.site-header.scrolled .site-nav a.nav-cta {
+  border-color: var(--text-primary); /* スクロール後は黒枠 */
+}
+
 .site-nav a.nav-cta::after {
   display: none;
 }
 
 .site-nav a.nav-cta:hover {
+  background-color: #FFFFFF;
+  color: var(--text-primary);
+  opacity: 1;
+}
+
+.site-header.scrolled .site-nav a.nav-cta:hover {
   background-color: var(--text-primary);
   color: var(--bg-primary);
-  opacity: 1;
 }
 
 /* Mobile Nav Toggle */
@@ -198,8 +217,17 @@ img, video {
   display: block;
   width: 24px;
   height: 1px;
-  background-color: var(--text-primary);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  background-color: #FFFFFF; /* スクロール前は白 */
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.4s ease;
+}
+
+.site-header.scrolled .hamburger-line {
+  background-color: var(--text-primary); /* スクロール後は黒 */
+}
+
+/* ハンバーガーメニューがアクティブ（開いている）の時は、ボタン線は常に黒にする（背景が白いため） */
+.nav-toggle.active .hamburger-line {
+  background-color: var(--text-primary) !important;
 }
 
 @media (max-width: 768px) {
@@ -229,6 +257,13 @@ img, video {
 
   .site-nav a {
     font-size: 1.1rem;
+    color: var(--text-primary) !important; /* スマホの縦メニュー内は常に黒文字 */
+  }
+  
+  .site-nav a.nav-cta {
+    border-color: var(--text-primary) !important;
+    width: 100%;
+    text-align: center;
   }
 
   .nav-toggle {
@@ -1580,4 +1615,38 @@ img, video {
 .fade-in-trigger.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ==========================================================================
+   Mobile Optimization Overrides (スマホ表示調整)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* イントロサブタイトルのPC用改行をスマホで無効化 */
+  .pc-only-break {
+    display: none;
+  }
+  
+  /* Vision（届けたい世界）セクションのスマホ時の重なり解消 */
+  .vision-grid {
+    gap: 4.5rem;
+    margin-top: 4rem;
+  }
+  
+  .vision-text, .vision-item.reverse .vision-text {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 2.5rem 1.5rem !important;
+    box-shadow: none !important;
+  }
+
+  .vision-image {
+    box-shadow: none !important;
+  }
+
+  /* ヒーロービデオセクションがスマホで横スクロールしないように保護 */
+  .hero-video-section, .video-container {
+    width: 100vw;
+    overflow: hidden;
+  }
 }
