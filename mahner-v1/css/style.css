@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap');
+
+:root {
+  /* Premium & Elegant Coaching Colors */
+  --color-ivory: #FCFBFA; /* Very subtle warm white */
+  --color-white: #FFFFFF;
+  --color-dusty-rose: #CBAFA5; /* Elegant taupe-pink */
+  --color-warm-beige: #DED6CF; /* Subdued beige */
+  --color-pale-gold: #B99B6B; /* Antique gold */
+  --color-soft-brown: #3A3533; /* Deep elegant charcoal-brown */
+  --color-accent-light: #F4F1EE; /* Light greige */
+  
+  /* Fonts */
+  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-serif: 'Noto Serif JP', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory);
+  color: var(--color-soft-brown);
+  line-height: 1.8;
+  font-weight: 300; /* Lighter body text feels more premium */
+  letter-spacing: 0.03em;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Typography */
+h1, h2, h3, h4, .serif-font {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.text-gold {
+  color: var(--color-pale-gold);
+}
+
+.text-rose {
+  color: var(--color-dusty-rose);
+}
+
+.text-soft-brown {
+  color: var(--color-soft-brown);
+}
+
+.ib {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Layout */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px; /* Wider padding for premium feel */
+}
+
+section {
+  padding: 120px 0; /* More breathing room */
+}
+
+/* Premium Section Styling */
+.section-white {
+  background-color: var(--color-white);
+  box-shadow: 0 10px 50px rgba(0,0,0,0.015); /* Very subtle, diffuse shadow */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 80px;
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px; /* Thin, elegant line instead of thick bar */
+  height: 40px; /* Vertical line feels more modern/premium */
+  background-color: var(--color-pale-gold);
+}
+
+/* Buttons (Elegant) */
+.btn-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 40px;
+  border-radius: 4px; /* Sharp but slightly softened, not bubble-like */
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+  max-width: 380px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-line {
+  background-color: #FFFFFF;
+  color: #06C755;
+  border: 1px solid #06C755;
+}
+
+.btn-line:hover {
+  background-color: #06C755;
+  color: #FFFFFF;
+  box-shadow: 0 10px 20px rgba(6, 199, 85, 0.15);
+}
+
+.btn-primary {
+  background-color: var(--color-dusty-rose);
+  color: white;
+  box-shadow: 0 8px 25px rgba(203, 175, 165, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: #bfa197;
+  box-shadow: 0 12px 30px rgba(203, 175, 165, 0.3);
+}
+
+/* Global Nav & Logo */
+.global-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  z-index: 10;
+}
+
+.brand-logo {
+  height: 90px;
+  width: auto;
+  mix-blend-mode: multiply;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background-color: var(--color-ivory);
+  padding: 100px 0 80px;
+}
+
+.hero-wrap {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  color: var(--color-pale-gold);
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+  line-height: 1.9;
+  color: #555;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+}
+
+.hero-image img {
+  border-radius: 8px; /* Elegant, subtle radius */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+/* Empathy (Troubles) */
+.empathy {
+  background-color: var(--color-accent-light);
+  margin: 0;
+  padding: 120px 20px;
+}
+
+.trouble-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.trouble-card {
+  background: var(--color-white);
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.trouble-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background-color: #F8F3F1; /* Very soft pale pink/beige */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.trouble-icon i {
+  color: var(--color-dusty-rose);
+  font-size: 1rem;
+}
+
+/* Future / Results */
+.future-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+.future-item {
+  text-align: center;
+}
+
+.future-img {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+}
+
+.future-img img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.future-item:hover .future-img img {
+  transform: scale(1.03);
+}
+
+.future-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--color-soft-brown);
+}
+
+/* Features */
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+
+.feature-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-number {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-warm-beige);
+  line-height: 1;
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.feature-text h3 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.feature-img {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+/* Profile */
+.profile-box {
+  background: var(--color-white);
+  padding: 80px 60px;
+  border-radius: 8px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.03);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.profile-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.profile-header p {
+  color: var(--color-pale-gold);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.message-area {
+  background: var(--color-accent-light);
+  padding: 50px;
+  border-radius: 8px;
+}
+
+/* FAQ */
+.faq-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--color-white);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.faq-q {
+  padding: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-a {
+  padding: 0 30px 30px;
+  display: none;
+  font-weight: 300;
+  color: #555;
+  line-height: 1.8;
+}
+
+.faq-item.active .faq-a {
+  display: block;
+}
+
+/* Footer CTA */
+.footer-cta {
+  background: var(--color-ivory);
+  text-align: center;
+  padding: 150px 20px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.footer-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-wrap { flex-direction: column; text-align: center; gap: 40px; }
+  .hero-title { font-size: 2rem; }
+  .feature-row { flex-direction: column !important; gap: 40px; margin-bottom: 60px; }
+  .profile-box { padding: 40px 20px; }
+  .empathy { padding: 80px 20px; }
+  .footer-cta .btn-wrap { flex-direction: column !important; gap: 16px !important; }
+  .footer-cta .btn { width: 100% !important; }
+}
