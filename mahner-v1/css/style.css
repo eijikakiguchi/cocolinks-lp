@@ -416,13 +416,51 @@ section {
   margin-bottom: 24px;
 }
 
+/* Replaced Inline Styles for Responsive Design */
+.hero-btn-wrap {
+  align-items: flex-start;
+}
+
+.solution-title {
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+}
+
+.offer-box {
+  background-color: var(--color-ivory);
+  border-radius: 8px;
+  padding: 60px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+}
+
+.price-number {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.footer-title {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .section-title { font-size: 1.6rem; margin-bottom: 50px; }
   .hero-wrap { flex-direction: column; text-align: center; gap: 40px; }
   .hero-title { font-size: 2rem; }
+  .hero-btn-wrap { align-items: center; }
+  .solution-title { font-size: 1.6rem; }
   .feature-row { flex-direction: column !important; gap: 40px; margin-bottom: 60px; }
   .profile-box { padding: 40px 20px; }
+  .message-area { padding: 30px 20px; }
   .empathy { padding: 80px 20px; }
+  .offer-box { padding: 40px 20px; }
+  .price-number { font-size: 2.2rem; }
+  .footer-title { font-size: 1.6rem; }
+  .footer-cta { padding: 80px 20px; }
   .footer-cta .btn-wrap { flex-direction: column !important; gap: 16px !important; }
   .footer-cta .btn { width: 100% !important; }
 }
