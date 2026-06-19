@@ -447,6 +447,10 @@ section {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .ib {
+    display: inline;
+    white-space: normal;
+  }
   .container { padding: 0 20px; }
   .section-title { font-size: 1.6rem; margin-bottom: 50px; }
   .hero-wrap { flex-direction: column; text-align: center; gap: 40px; }
