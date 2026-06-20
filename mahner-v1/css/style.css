@@ -445,6 +445,14 @@ section {
   margin-bottom: 16px;
 }
 
+/* Utility Classes for Responsive Line Breaks */
+@media (min-width: 769px) {
+  .sp-br { display: none; }
+}
+@media (max-width: 768px) {
+  .pc-br { display: none; }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .ib {
