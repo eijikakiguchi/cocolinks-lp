@@ -25,7 +25,7 @@
                 </span>
                 <span class="action-text">LINE予約</span>
             </a>
-            <button class="header-action">
+            <button class="header-action" id="menu-btn">
                 <span class="action-icon hamburger">
                     <span></span><span></span><span></span>
                 </span>
@@ -33,6 +33,20 @@
             </button>
         </div>
     </header>
+
+    <!-- Drawer Menu -->
+    <div class="drawer-menu" id="drawer-menu">
+        <button class="drawer-close" id="drawer-close">×</button>
+        <nav class="drawer-nav">
+            <ul>
+                <li><a href="#concept">CONCEPT</a></li>
+                <li><a href="#menu">MENU</a></li>
+                <li><a href="#flow">FLOW</a></li>
+                <li><a href="#owner">THERAPIST</a></li>
+                <li><a href="#info">SALON INFO</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main>
         <!-- Background decorative huge letters -->
@@ -289,5 +303,33 @@
         </div>
     </footer>
 
+    <!-- Script for Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menu-btn');
+            const drawerMenu = document.getElementById('drawer-menu');
+            const closeBtn = document.getElementById('drawer-close');
+            const drawerLinks = document.querySelectorAll('.drawer-nav a');
+
+            // Open menu
+            menuBtn.addEventListener('click', () => {
+                drawerMenu.classList.add('is-open');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+
+            // Close menu
+            const closeMenu = () => {
+                drawerMenu.classList.remove('is-open');
+                document.body.style.overflow = '';
+            };
+
+            closeBtn.addEventListener('click', closeMenu);
+
+            // Close menu when a link is clicked
+            drawerLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        });
+    </script>
 </body>
 </html>
