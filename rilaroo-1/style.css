@@ -131,7 +131,7 @@ a:hover {
         padding: 0 15px; /* スマホでは左右余白を減らす */
     }
     .section-title {
-        font-size: 1.35rem; /* 少し縮小して1行に収めやすく */
+        font-size: clamp(1.15rem, 4.5vw, 1.3rem); /* サイズを可変にして「60分。」が落ちないように調整 */
         margin-bottom: 2rem;
         letter-spacing: 0.02em; /* 文字間を詰めて改行を防ぐ */
         line-height: 1.6;
@@ -153,7 +153,7 @@ a:hover {
 
 @media screen and (max-width: 767px) {
     .card {
-        padding: 24px;
+        padding: 24px 16px; /* 左右のpaddingをさらに減らしてテキスト表示幅を広く確保 */
     }
 }
 
