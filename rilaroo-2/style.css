@@ -1,0 +1,700 @@
+@charset "UTF-8";
+
+/* ==============================
+   Variables (POLA Design System)
+   ============================== */
+:root {
+    /* Primary (純黒運用) */
+    --color-primary: #000000;
+    --color-text: #000000;
+    --color-text-inverse: #ffffff;
+    
+    /* Surface (面色) */
+    --color-bg: #ffffff;
+    --color-bg-alt: #f5f5f5; /* Surface Gray */
+    --color-surface-mid: #d8d8d8;
+    --color-border: #e5e5e5;
+  
+    /* Typography */
+    --font-base: 游ゴシック体, YuGothic, 游ゴシック, "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro W3", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", sans-serif;
+  
+    /* Layout & Styling */
+    --radius-none: 0px;
+    --shadow-none: none;
+    --header-h: 60px;
+}
+
+/* ==============================
+   Reset & Base
+   ============================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.75; /* 28px / 16px */
+    letter-spacing: normal; /* POLA指定: palt が効くため normal でよい */
+    font-size: 16px;
+    font-weight: 400;
+    font-feature-settings: "palt" 1; /* POLA最重要特徴: 全要素に詰め組み適用 */
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    overflow-x: hidden;
+    word-break: normal;
+    overflow-wrap: break-word;
+    line-break: strict;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    font-feature-settings: "palt" 1;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+/* ==============================
+   Typography
+   ============================== */
+h1, h2, h3, h4, h5, h6, p, span, button, nav, footer, div {
+    font-feature-settings: "palt" 1;
+}
+
+/* Display H1 */
+.display-title {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.71; /* 48px */
+}
+
+/* Section H2 */
+.section-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.67; /* 40px */
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Card H3 */
+.card-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+@media screen and (max-width: 767px) {
+    .display-title {
+        font-size: 24px;
+    }
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 32px;
+    }
+}
+
+/* ==============================
+   Utilities
+   ============================== */
+.container {
+    width: 100%;
+    max-width: 1200px; /* 余白を持たせたMax width */
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.sp-only { display: none; }
+.pc-only { display: block; }
+
+.container-sm { max-width: 760px; }
+.container-md { max-width: 900px; }
+
+.section { padding: 80px 0; }
+
+@media screen and (max-width: 767px) {
+    .container { padding: 0 16px; }
+    .section { padding: 60px 0; }
+    .sp-only { display: inline; }
+    .pc-only { display: none; }
+}
+
+.bg-alt {
+    background-color: var(--color-bg-alt);
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+.card {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-none); /* POLA指定: 角張り */
+    box-shadow: var(--shadow-none); /* POLA指定: フラット原則 */
+    padding: 48px;
+}
+.bg-alt .card {
+    background-color: var(--color-bg);
+}
+
+@media screen and (max-width: 767px) {
+    .card { padding: 32px 24px; }
+}
+
+.checklist { list-style: none; }
+.checklist li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+.checklist li::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-text);
+}
+
+/* ==============================
+   Buttons (CTA)
+   ============================== */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse) !important;
+    padding: 12px 24px;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-none);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text) !important;
+}
+
+.btn-small {
+    padding: 9px 16px;
+    font-size: 14px;
+}
+
+.btn-large {
+    padding: 16px 40px;
+    font-size: 18px;
+}
+
+.btn-outline {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    padding: 12px 24px;
+    border-radius: var(--radius-none);
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    border-color: var(--color-primary);
+}
+
+@media screen and (max-width: 767px) {
+    .btn, .btn-outline {
+        width: 100%;
+        padding: 16px 20px;
+    }
+}
+
+.cta-wrapper {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.cta-wrapper-multi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+@media screen and (min-width: 600px) {
+    .cta-wrapper-multi {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .cta-wrapper-multi .btn, .cta-wrapper-multi .btn-outline {
+        width: auto;
+    }
+}
+
+/* ==============================
+   Components
+   ============================== */
+
+/* 1. Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-h);
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06); /* POLA指定: Headerのみごく薄いシャドウ */
+    display: flex;
+    align-items: center;
+}
+
+.header-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-subtitle {
+    font-size: 12px;
+    color: var(--color-text);
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.logo-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav a {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 900px) {
+    .nav { display: none; }
+}
+
+@media screen and (max-width: 500px) {
+    .header-cta .btn {
+        padding: 6px 12px;
+        font-size: 13px;
+        width: auto;
+    }
+}
+
+/* 2. Hero */
+.hero {
+    padding-top: var(--header-h);
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.hero-image-area {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-image-area::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-main-copy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 1.71;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8);
+    z-index: 2;
+}
+
+.hero-text-area {
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+.hero-sub-copy {
+    font-size: 18px; /* Body Lead */
+    line-height: 1.78;
+    margin-bottom: 24px;
+}
+
+.hero-note {
+    font-size: 13px; /* Caption */
+    color: var(--color-text);
+}
+
+@media screen and (max-width: 767px) {
+    .hero-main-copy {
+        font-size: 20px;
+        line-height: 1.67;
+    }
+    .hero-sub-copy {
+        font-size: 16px;
+    }
+    .hero-text-area {
+        padding-top: 40px;
+    }
+}
+
+/* 3. Empathy Section */
+.empathy-closing {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* 4. Concept Section */
+.concept-text {
+    font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+    .concept-text {
+        text-align: left;
+    }
+}
+
+/* 5. Menu Section */
+.menu-layout {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.menu-image { flex: 1; }
+
+.menu-details { flex: 1.2; }
+
+.menu-name { margin-bottom: 16px; }
+
+.menu-name h3 {
+    font-size: 21.92px; /* Sub Section (h2 alt) */
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.menu-badge {
+    display: inline-block;
+    background-color: var(--color-surface-mid);
+    color: var(--color-primary);
+    padding: 4px 8px;
+    border-radius: 0;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.menu-price-time {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.menu-note {
+    font-size: 13px;
+    margin-bottom: 32px;
+}
+
+.menu-recommend h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 900px) {
+    .menu-layout {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .menu-image, .menu-details { width: 100%; }
+}
+
+/* 6. Flow Section */
+.flow-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg);
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+.step-num {
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-right: 24px;
+    flex-shrink: 0;
+}
+
+.step-item p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* 7. Safe Section */
+.safe-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.cosmetics-note {
+    background-color: var(--color-bg-alt);
+    padding: 32px;
+    font-size: 13px;
+}
+
+.cosmetics-note p { margin-bottom: 16px; }
+.cosmetics-note p:last-child { margin-bottom: 0; }
+
+/* 8. Voice Section */
+.voice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .voice-grid { grid-template-columns: 1fr; gap: 16px;}
+}
+
+.voice-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 24px;
+    border: 1px solid var(--color-border);
+}
+
+.voice-note {
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+/* 9. Space Section */
+.space-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.space-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+@media screen and (max-width: 767px) {
+    .space-images {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 10. Owner Section */
+.owner-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.owner-image { flex: 1; }
+
+.owner-placeholder {
+    width: 100%;
+    background-color: var(--color-surface-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.owner-img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.placeholder-text {
+    position: absolute;
+    z-index: 1;
+    color: var(--color-bg);
+    font-size: 14px;
+}
+
+.owner-text { flex: 1.5; }
+
+.owner-sns {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-border);
+}
+
+.sns-note {
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 900px) {
+    .owner-layout {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .owner-image {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .owner-text { width: 100%; }
+}
+
+/* 11. Reserve Section */
+.reserve-benefit {
+    margin-top: 32px;
+    padding: 32px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+}
+
+.reserve-benefit p { margin-bottom: 8px; }
+.reserve-benefit p:last-child { margin-bottom: 0; }
+
+/* 12. Info Table Section */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-bg);
+}
+
+.info-table th, .info-table td {
+    padding: 24px;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: top;
+}
+
+.info-table tr:first-child th, .info-table tr:first-child td {
+    border-top: 1px solid var(--color-border);
+}
+
+.info-table th {
+    width: 30%;
+    background-color: var(--color-bg-alt);
+    font-weight: 400;
+}
+
+@media screen and (max-width: 600px) {
+    .info-table th, .info-table td {
+        display: block;
+        width: 100%;
+    }
+    .info-table th {
+        padding-bottom: 8px;
+        border-bottom: none;
+    }
+    .info-table td {
+        padding-top: 0;
+    }
+}
+
+/* 13. Final CTA Section */
+.final-cta-text {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 767px) {
+    .final-cta-text {
+        font-size: 16px;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    padding: 40px 0;
+}
+
+.footer small {
+    font-size: 13px;
+    letter-spacing: normal;
+}
