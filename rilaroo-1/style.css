@@ -37,6 +37,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px; /* ヘッダーの高さ分オフセット */
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -46,8 +48,8 @@ body {
     line-height: 1.8;
     letter-spacing: 0.05em;
     -webkit-font-smoothing: antialiased;
+    width: 100%;
     overflow-x: hidden; /* 横スクロール防止 */
-    word-break: keep-all; /* 単語の途中での改行を防ぐ */
     word-break: auto-phrase; /* モダンブラウザ用: 意味のまとまりで改行 */
     overflow-wrap: break-word;
     line-break: strict;
