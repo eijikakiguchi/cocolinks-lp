@@ -47,6 +47,10 @@ body {
     letter-spacing: 0.05em;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden; /* 横スクロール防止 */
+    word-break: keep-all; /* 単語の途中での改行を防ぐ */
+    word-break: auto-phrase; /* モダンブラウザ用: 意味のまとまりで改行 */
+    overflow-wrap: break-word;
+    line-break: strict;
 }
 
 img {
@@ -73,6 +77,13 @@ a:hover {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.sp-only {
+    display: none;
+}
+.pc-only {
+    display: block;
 }
 
 .container-sm {
@@ -116,9 +127,20 @@ a:hover {
 }
 
 @media screen and (max-width: 767px) {
+    .container {
+        padding: 0 15px; /* スマホでは左右余白を減らす */
+    }
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.35rem; /* 少し縮小して1行に収めやすく */
         margin-bottom: 2rem;
+        letter-spacing: 0.02em; /* 文字間を詰めて改行を防ぐ */
+        line-height: 1.6;
+    }
+    .sp-only {
+        display: inline;
+    }
+    .pc-only {
+        display: none;
     }
 }
 
@@ -379,10 +401,15 @@ a:hover {
 
 @media screen and (max-width: 767px) {
     .hero-main-copy {
-        font-size: 1.3rem;
+        width: 100%;
+        padding: 0 10px;
+        font-size: clamp(1.1rem, 4.5vw, 1.4rem); /* 画面幅に応じて可変 */
+        letter-spacing: 0.02em;
+        line-height: 1.5;
     }
     .hero-sub-copy {
         font-size: 0.95rem;
+        letter-spacing: 0.02em;
     }
     .hero-text-area {
         padding-top: 30px;
