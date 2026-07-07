@@ -498,6 +498,10 @@ a:hover {
 @media screen and (max-width: 900px) {
     .menu-layout {
         flex-direction: column;
+        align-items: stretch;
+    }
+    .menu-image, .menu-details {
+        width: 100%;
     }
 }
 
@@ -668,10 +672,14 @@ a:hover {
 @media screen and (max-width: 900px) {
     .owner-layout {
         flex-direction: column;
+        align-items: stretch;
     }
     .owner-image {
         width: 70%;
         margin: 0 auto;
+    }
+    .owner-text {
+        width: 100%;
     }
 }
 
