@@ -1,0 +1,651 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+:root {
+    --color-white: #ffffff;
+    --color-bg-base: #fcfbfa; /* 温かみのある白 */
+    --color-bg-greige: #f2f0eb; /* グレーがかったベージュ */
+    --color-text-main: #4a4a4a; /* 落ち着いたチャコールグレー */
+    --color-text-light: #777777;
+    --color-border: #dcdcdc;
+
+    --font-en: 'Cormorant Garamond', "Times New Roman", Times, serif;
+    --font-ja: 'Shippori Mincho', "Yu Mincho", "Zen Old Mincho", serif;
+
+    --content-width: 1100px;
+    --padding-sp: 24px;
+    --padding-pc: 60px;
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    font-family: var(--font-ja);
+    font-size: 1.4rem; /* 14px 繊細な文字組み */
+    line-height: 2.2;
+    letter-spacing: 0.08em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+.section {
+    padding: 100px 0;
+}
+
+.section-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-sp);
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 160px 0;
+    }
+    .section-inner {
+        padding: 0 var(--padding-pc);
+    }
+}
+
+.en {
+    font-family: var(--font-en);
+}
+
+.ja {
+    font-family: var(--font-ja);
+}
+
+/* 控えめなリンク表現 */
+.btn-line {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-en);
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--color-text-main);
+    transition: opacity 0.3s ease;
+}
+
+.btn-line::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background-color: var(--color-text-main);
+    margin-left: 16px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.btn-line::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 1px;
+    background-color: var(--color-text-main);
+    position: absolute;
+    right: -2px; /* right adjustment depending on container */
+    transform: rotate(45deg);
+    transform-origin: right bottom;
+    transition: transform 0.3s ease;
+    opacity: 0; /* JS or relative positioning to fix arrow */
+}
+/* Arrow implementation refined */
+.btn-line {
+    position: relative;
+}
+.btn-line::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 4px; /* align with border bottom */
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid var(--color-text-main);
+    border-right: 1px solid var(--color-text-main);
+    transform: rotate(45deg);
+}
+
+.btn-line:hover {
+    opacity: 0.6;
+}
+
+.btn-line--small {
+    font-size: 1.3rem;
+    padding-bottom: 2px;
+}
+.btn-line--small::after {
+    width: 16px;
+    margin-left: 8px;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(252, 251, 250, 0.9);
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px var(--padding-sp);
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header__logo {
+    font-family: var(--font-en);
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.header__nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .header__inner {
+        padding: 24px var(--padding-pc);
+    }
+    .header__nav {
+        display: block;
+    }
+    .header__nav-list {
+        display: flex;
+        gap: 32px;
+    }
+    .header__nav-list a {
+        font-family: var(--font-en);
+        font-size: 1.4rem;
+        letter-spacing: 0.05em;
+    }
+    .header__menu-btn {
+        display: none;
+    }
+}
+
+/* SP Menu Button */
+.header__menu-btn {
+    width: 32px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 101;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .header__menu-btn {
+        display: none;
+    }
+}
+
+.header__menu-btn span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-text-main);
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header__menu-btn span:first-child {
+    top: 6px;
+}
+
+.header__menu-btn span:last-child {
+    bottom: 6px;
+}
+
+/* SP Nav Open State (Simple Implementation) */
+.nav-open .header__nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-bg-base);
+    padding-top: 100px;
+    text-align: center;
+}
+
+.nav-open .header__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.nav-open .header__nav-list a {
+    font-family: var(--font-en);
+    font-size: 1.8rem;
+}
+
+.nav-open .header__menu-btn span:first-child {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.nav-open .header__menu-btn span:last-child {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+
+/* ==========================================================================
+   First View
+   ========================================================================== */
+.fv {
+    padding-top: 80px; /* Header space */
+    position: relative;
+}
+
+.fv__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--padding-sp);
+    position: relative;
+}
+
+.fv__media {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: var(--color-bg-greige);
+}
+
+.fv__video, .fv__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fv__copy {
+    position: absolute;
+    bottom: -40px;
+    right: var(--padding-sp);
+    background-color: var(--color-bg-base);
+    padding: 32px 0 0 24px;
+}
+
+.fv__copy h2 {
+    font-family: var(--font-en);
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.fv__copy p {
+    font-size: 1.3rem;
+}
+
+.fv__scroll {
+    position: absolute;
+    left: var(--padding-sp);
+    bottom: -60px;
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fv__scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 60px;
+    background-color: var(--color-text-main);
+}
+
+@media (min-width: 768px) {
+    .fv {
+        padding-top: 100px;
+    }
+    .fv__inner {
+        padding: 0 10%; /* 左右に大きな余白 */
+    }
+    .fv__media {
+        aspect-ratio: 16 / 9;
+        height: 75vh;
+        min-height: 500px;
+    }
+    .fv__copy {
+        bottom: 80px;
+        right: 5%;
+        padding: 40px;
+    }
+    .fv__copy h2 {
+        font-size: 6rem;
+    }
+    .fv__copy p {
+        font-size: 1.4rem;
+    }
+    .fv__scroll {
+        left: 5%;
+        bottom: 40px;
+    }
+}
+
+/* ==========================================================================
+   Two Column Layout (Photos and Text)
+   ========================================================================== */
+.two-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.two-column__image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.two-column__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* PC Layout */
+@media (min-width: 768px) {
+    .two-column {
+        flex-direction: row;
+        align-items: center;
+        gap: 8%;
+    }
+    .two-column__image {
+        width: 50%;
+    }
+    .two-column__text {
+        width: 42%;
+    }
+
+    /* Alternate Layout */
+    .two-column.alt-layout {
+        flex-direction: row-reverse;
+    }
+}
+
+/* Typography for Two Column */
+.section-title {
+    font-family: var(--font-en);
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: 0.05em;
+}
+
+.beauty-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.beauty-title .en {
+    font-size: 3.2rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.beauty-title .ja {
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+}
+
+.text-body {
+    max-width: 400px; /* 文章の横幅を狭く */
+}
+
+.text-body p {
+    margin-bottom: 32px;
+}
+
+.text-body p:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .section-title, .beauty-title .en {
+        font-size: 4.8rem;
+    }
+    .beauty-title .ja {
+        font-size: 3.6rem;
+    }
+}
+
+/* ==========================================================================
+   Sections Adjustments
+   ========================================================================== */
+/* Concept */
+.concept {
+    margin-top: 40px;
+}
+@media (min-width: 768px) {
+    .concept {
+        margin-top: 80px;
+    }
+}
+
+/* 4つの美 */
+.beauty-section {
+    padding: 80px 0;
+}
+@media (min-width: 768px) {
+    .beauty-section {
+        padding: 140px 0;
+    }
+}
+
+.beauty-section--bg {
+    background-color: var(--color-bg-greige);
+}
+
+/* Visit */
+.visit {
+    text-align: center;
+    background-color: var(--color-bg-greige);
+}
+.visit__content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.visit__text {
+    margin-bottom: 48px;
+}
+
+/* Select */
+.select__header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+.select__desc {
+    margin-bottom: 32px;
+}
+.select__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    font-size: 1.3rem;
+}
+
+.select__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .select__gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+}
+
+.select__item img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Gift */
+.gift-row + .gift-row {
+    margin-top: 80px;
+}
+@media (min-width: 768px) {
+    .gift-row + .gift-row {
+        margin-top: 160px;
+    }
+}
+
+/* Shop */
+.shop__info {
+    max-width: 400px;
+}
+.shop__name {
+    font-family: var(--font-en);
+    font-size: 2.4rem;
+    margin-bottom: 32px;
+    letter-spacing: 0.1em;
+}
+.shop__dl {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: 48px;
+}
+.shop__dl dt, .shop__dl dd {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+.shop__dl dt {
+    width: 30%;
+    font-family: var(--font-en);
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+}
+.shop__dl dd {
+    width: 70%;
+    font-size: 1.3rem;
+}
+.shop__links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+/* Closing */
+.closing {
+    text-align: center;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    padding: 60px var(--padding-sp);
+    text-align: center;
+    background-color: var(--color-bg-base);
+}
+
+.footer__nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 40px;
+    font-family: var(--font-en);
+    letter-spacing: 0.1em;
+}
+
+.footer__copyright {
+    font-family: var(--font-en);
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+.js-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.js-fade-up.is-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js-fade-up {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+    }
+}
