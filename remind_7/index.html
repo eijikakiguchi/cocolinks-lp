@@ -1,1 +1,143 @@
-test
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remind｜ときめく食器と雑貨のお店</title>
+  <meta name="description" content="和歌山・友田町の雑貨店 Remind。食器、食、美容、アート。毎日の暮らしに小さなときめきを届けます。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Remind｜ときめく食器と雑貨のお店">
+  <meta property="og:description" content="毎日の暮らしに、小さなときめきを。和歌山の雑貨店 Remind。">
+  <meta property="og:image" content="images/IMG_8417.JPG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@400;500&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header js-header">
+    <div class="header__inner">
+      <a class="logo" href="#top" aria-label="Remind トップへ">Remind<span>.</span></a>
+      <button class="menu-button js-menu-button" type="button" aria-label="メニューを開く" aria-controls="site-nav" aria-expanded="false"><span class="menu-button__line"></span><span class="menu-button__line"></span><span class="menu-button__label js-menu-label" aria-hidden="true">MENU</span></button>
+      <nav class="nav" id="site-nav" aria-label="メインメニュー">
+        <a href="#about">About</a>
+        <a href="#selection">Select</a>
+        <a href="#gift">Gift</a>
+        <a href="#visit">Access</a>
+        <a class="nav__instagram" href="https://www.instagram.com/remind_zakka/?hl=ja" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero hero--video js-reveal">
+      <div class="hero__image-wrap">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="images/IMG_8417.JPG">
+          <source src="images/hero_video_1.mp4" type="video/mp4">
+          <img src="images/IMG_8417.JPG" alt="和歌山にあるRemindの店舗外観" fetchpriority="high">
+        </video>
+      </div>
+      <div class="hero__veil"></div>
+      <div class="hero__content shell">
+        <p class="eyebrow eyebrow--light">WAKAYAMA · SELECT SHOP</p>
+        <h1>毎日の暮らしに、<br><em>小さなときめきを。</em></h1>
+        <p class="hero__lead">食器、食、美容、アート。<br>心がふっと動く、そんな出会いを集めました。</p>
+        <a class="circle-link" href="#visit"><span>Access</span><i aria-hidden="true">↓</i></a>
+      </div>
+    </section>
+
+    <section class="intro section" id="about">
+      <div class="shell intro__grid js-reveal">
+        <p class="eyebrow">CHOSEN WITH HEART</p>
+        <div class="intro__copy">
+          <h2>心が動くものを、<br>暮らしのそばに。</h2>
+          <p>Remindは、暮らしに小さなときめきを届けるセレクトショップです。手に取るたびに気分が弾むもの。作り手の想いに心が動いたもの。そんな「好き」を、一つひとつ選んでいます。</p>
+          <a class="text-link" href="#visit">お店の情報を見る <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="selection section section--dark" id="selection">
+      <div class="shell">
+        <div class="section-heading js-reveal">
+          <p class="eyebrow eyebrow--light">WHAT WE SELECT</p>
+          <h2>暮らしを彩る、<em>4つの美。</em></h2>
+          <p>毎日の暮らしを、少し豊かにする4つのセレクト。</p>
+        </div>
+        <div class="category-grid">
+          <a class="category-card js-reveal js-category-trigger" href="#selection" data-category="tableware" aria-haspopup="dialog">
+            <div class="category-card__image"><img src="images/menu_tableware.jpg" alt="食卓を彩るRemindのうつわ" loading="lazy"></div>
+            <div class="category-card__body"><p class="category-card__number">I</p><h3>美器 <span>Tableware</span></h3><p>いつもの食卓を、<br class="br-sp">少し特別に。</p><span class="category-card__more">詳しく見る <i aria-hidden="true">↗</i></span></div>
+          </a>
+          <a class="category-card js-reveal js-category-trigger" href="#selection" data-category="taste" aria-haspopup="dialog">
+            <div class="category-card__image"><img src="images/menu_taste.jpg" alt="からだを想うおいしい食品" loading="lazy"></div>
+            <div class="category-card__body"><p class="category-card__number">II</p><h3>美味 <span>Taste</span></h3><p>からだ想いの、<br class="br-sp">おいしい時間。</p><span class="category-card__more">詳しく見る <i aria-hidden="true">↗</i></span></div>
+          </a>
+          <a class="category-card js-reveal js-category-trigger" href="#selection" data-category="beauty" aria-haspopup="dialog">
+            <div class="category-card__image"><img src="images/menu_beauty.jpg" alt="心もときめく美容アイテム" loading="lazy"></div>
+            <div class="category-card__body"><p class="category-card__number">III</p><h3>美肌 <span>Beauty</span></h3><p>鏡を見る時間が、<br class="br-sp">少し楽しみに。</p><span class="category-card__more">詳しく見る <i aria-hidden="true">↗</i></span></div>
+          </a>
+          <a class="category-card js-reveal js-category-trigger" href="#selection" data-category="art" aria-haspopup="dialog">
+            <div class="category-card__image"><img src="images/menu_art.jpg" alt="空間を彩るアートと雑貨" loading="lazy"></div>
+            <div class="category-card__body"><p class="category-card__number">IV</p><h3>美鑑 <span>Art</span></h3><p>空間に、<br class="br-sp">心ほどける景色を。</p><span class="category-card__more">詳しく見る <i aria-hidden="true">↗</i></span></div>
+          </a>
+        </div>
+        <div class="selection__note js-reveal"><span>+ Also</span><p>英国雑貨、アクセサリー、インテリア雑貨、ギフトアイテムなど。</p></div>
+      </div>
+    </section>
+
+    <section class="gallery section">
+      <div class="shell gallery__layout">
+        <div class="gallery__statement js-reveal"><p class="eyebrow">MORE TO LOVE</p><h2>好きがひとつ増えると、<br><em>暮らしはもっと楽しくなる。</em></h2></div>
+        <div class="gallery__photos js-reveal">
+          <img class="gallery__photo--large" src="images/gallery_2.jpg" alt="カラフルなリボンとバッグが並ぶRemindの店内" loading="lazy">
+          <img class="gallery__photo--small" src="images/gallery_1.jpg" alt="Remindで扱うアクセサリー" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="gift section" id="gift">
+      <div class="shell gift__layout">
+        <div class="gift__image js-reveal"><img src="images/gift.jpg" alt="リボンで包まれたRemindのギフト" loading="lazy"></div>
+        <div class="gift__copy js-reveal"><p class="eyebrow">THE GIFT FOR YOU</p><h2>贈る時間まで、<br><em>心に残るものに。</em></h2><p>大切な人へ。いつも頑張る自分へ。贈る相手の顔を思い浮かべながら、ゆっくり選ぶ時間も、贈りものの一部。</p></div>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="visit__photo"><img src="images/IMG_8399.JPG" alt="Remindの外観" loading="lazy"></div>
+      <div class="visit__panel">
+        <p class="eyebrow eyebrow--light">COME IN, TAKE YOUR TIME</p>
+        <h2>お店で、<br><em>とっておきと出会う。</em></h2>
+        <address><strong>Remind<small>（リ・マインド）</small></strong><span>〒640-8342<br>和歌山市友田町3-85 まつやビル1階</span></address>
+        <p class="visit__notice">営業時間・定休日はInstagramでお知らせしています。</p>
+        <div class="visit__route">
+          <div class="visit__route-heading"><p>JR和歌山駅から</p><span>徒歩約5分</span></div>
+          <a class="visit__map" href="https://maps.app.goo.gl/abUjy5F6TXNsqJ949" target="_blank" rel="noopener noreferrer" aria-label="Google MapsでRemindへの道順を開く">
+            <img src="images/map.png" alt="JR和歌山駅中央口(西口)からけやき大通りを進んだ、まつやビル1階にRemindがある案内図" loading="lazy">
+            <span class="visit__map-hint">TAP TO OPEN GOOGLE MAPS ↗</span>
+          </a>
+          <p class="visit__route-note">和歌山駅から、けやき大通りをまっすぐ。<br>黒い外壁とガラス扉が目印です。</p>
+        </div>
+        <div class="visit__actions"><a class="button button--light" href="https://maps.app.goo.gl/abUjy5F6TXNsqJ949" target="_blank" rel="noopener noreferrer">Google Mapsで開く <span>↗</span></a><a class="button button--outline" href="https://www.instagram.com/remind_zakka/?hl=ja" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="logo" href="#top">Remind<span>.</span></a><p>Small things, well chosen.</p><small>© Remind</small></footer>
+
+  <dialog class="story-dialog js-story-dialog" aria-labelledby="story-title">
+    <div class="story-dialog__frame">
+      <div class="story-dialog__bar"><p>REMIND / FOUR STORIES</p><button class="story-dialog__close js-story-close" type="button" aria-label="詳細を閉じて戻る">戻る <span aria-hidden="true">×</span></button></div>
+      <div class="story-dialog__scroll">
+        <div class="story-dialog__inner">
+          <div class="story-dialog__heading"><p class="eyebrow js-story-kicker"></p><h2 id="story-title" class="js-story-title"></h2><p class="story-dialog__english js-story-english"></p></div>
+          <div class="story-dialog__images"><figure class="story-dialog__image story-dialog__image--main"><img class="js-story-main-image" src="" alt="" loading="lazy"></figure><figure class="story-dialog__image story-dialog__image--sub"><img class="js-story-sub-image" src="" alt="" loading="lazy"></figure></div>
+          <div class="story-dialog__copy"><p class="story-dialog__lead js-story-lead"></p><div class="js-story-body"></div><a class="text-link js-story-link" href="#visit">店舗のご案内を見る <span aria-hidden="true">↓</span></a></div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
+
