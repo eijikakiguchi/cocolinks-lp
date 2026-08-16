@@ -1,0 +1,293 @@
+@charset "UTF-8";
+/* ================================================
+   Fairy Balloon|りえさま専用ご案内
+   和モダン(墨黒×生成り×朱×金)/ 可読性優先
+   ================================================ */
+:root{
+  --sumi:#171310;        /* 墨黒(背景) */
+  --sumi-soft:#221D17;   /* 墨黒の面 */
+  --paper:#F7F3EB;       /* 生成り(紙) */
+  --wash:#EFE9DD;        /* 薄い和紙色の面 */
+  --ink:#2A241D;         /* 本文(濃く・読みやすく) */
+  --sub:#5D554A;         /* 補助文(v1より濃く) */
+  --shu:#A8342B;         /* 朱(落款) */
+  --gold:#A98F55;        /* 金 */
+  --gold-bright:#C9A85C;
+  --hairline:#DFD6C4;    /* 紙の上の罫線 */
+  --hairline-dark:#3B342B;/* 墨の上の罫線 */
+  --on-sumi:#F2EDE3;     /* 墨の上の文字(白すぎない生成り白) */
+  --on-sumi-sub:#B9AF9F; /* 墨の上の補助文 */
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;
+  --gothic:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+  --brush:"Yuji Syuku",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--gothic);
+  font-weight:400;                 /* v1の300→400: 読みやすく */
+  font-size:16px;                  /* v1の15px→16px */
+  line-height:2.05;
+  letter-spacing:.03em;
+  -webkit-font-smoothing:antialiased;
+}
+@media (min-width:768px){ body{font-size:17px} }
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:660px;margin:0 auto;padding:0 24px}
+section{padding:clamp(64px,11vw,100px) 0}
+
+/* --- 共通パーツ --- */
+.eyebrow{
+  font-size:12px;font-weight:500;letter-spacing:.32em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:16px;
+}
+.sec-title{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(23px,5.4vw,30px);line-height:1.75;
+  letter-spacing:.08em;margin-bottom:clamp(26px,5vw,40px);
+}
+.gold-rule{width:40px;height:1px;background:var(--gold);margin:0 0 22px;border:0}
+p.lead-text{margin-bottom:1.5em}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .9s ease,transform .9s ease}
+.fade.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .fade{opacity:1;transform:none;transition:none}
+}
+.btn{
+  display:inline-block;font-family:var(--gothic);font-weight:500;
+  font-size:15px;letter-spacing:.12em;text-decoration:none;text-align:center;
+  padding:18px 44px;border-radius:2px;
+  transition:opacity .25s ease,border-color .25s ease,color .25s ease,background .25s ease;
+}
+.btn-primary{background:var(--shu);color:#FDFBF6;border:1px solid var(--shu)}
+.btn-primary:hover{opacity:.88}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-note{font-size:12px;letter-spacing:.1em;color:var(--sub);margin-top:14px}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* --- 落款(朱印) --- */
+.rakkan{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;background:var(--shu);color:#FDFBF6;
+  font-family:var(--brush);font-size:17px;line-height:1.2;
+  letter-spacing:0;border-radius:3px;
+  writing-mode:vertical-rl;padding:4px 0;
+}
+
+/* --- ヒーロー(墨黒) --- */
+.hero{
+  background:var(--sumi);color:var(--on-sumi);
+  min-height:min(90svh,820px);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:64px 24px 130px;position:relative;
+}
+.hero .wordmark{
+  font-family:var(--serif);font-weight:600;font-size:16px;
+  letter-spacing:.44em;text-indent:.44em;color:var(--on-sumi);
+}
+.hero .wordmark small{
+  display:block;font-family:var(--gothic);font-weight:400;
+  font-size:11px;letter-spacing:.3em;text-indent:.3em;color:var(--on-sumi-sub);margin-top:10px;
+}
+.hero-tate{
+  margin:clamp(32px,6vh,48px) 0;
+  font-family:var(--serif);font-weight:600;
+  writing-mode:vertical-rl;letter-spacing:.24em;
+  font-size:clamp(26px,6vw,34px);line-height:1;
+  color:var(--on-sumi);
+}
+.hero-copy{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(14px,3.6vw,16px);letter-spacing:.18em;
+  color:var(--on-sumi-sub);
+}
+.hero .rakkan{position:absolute;right:24px;bottom:28px}
+.hero-scroll{
+  position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+  font-size:10px;letter-spacing:.3em;color:var(--on-sumi-sub);
+  text-transform:uppercase;
+}
+.hero-scroll::after{
+  content:"";display:block;width:1px;height:34px;
+  background:linear-gradient(var(--gold),transparent);
+  margin:10px auto 0;
+}
+
+/* --- ご挨拶 --- */
+.greeting .to{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(21px,5vw,25px);letter-spacing:.14em;margin-bottom:28px;
+}
+.greeting p{margin-bottom:1.5em}
+.greeting p strong{font-weight:600}
+
+/* --- 旗 --- */
+.hero-visual{margin:0 0 clamp(30px,6vw,44px)}
+.hero-visual img{border-radius:2px;aspect-ratio:4/5;object-fit:cover}
+.hero-visual figcaption{
+  font-size:12px;letter-spacing:.12em;color:var(--sub);margin-top:12px;text-align:right;
+}
+.flag{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(25px,6.2vw,34px);line-height:1.9;letter-spacing:.1em;
+}
+.flag-sub{margin-top:22px}
+
+/* --- 流儀 --- */
+.steps{list-style:none;counter-reset:step;margin-top:8px}
+.steps li{
+  counter-increment:step;position:relative;
+  padding:28px 0 28px 68px;border-top:1px solid var(--hairline);
+}
+.steps li:last-child{border-bottom:1px solid var(--hairline)}
+.steps li::before{
+  content:"0" counter(step);
+  position:absolute;left:0;top:30px;
+  font-family:var(--serif);font-size:21px;color:var(--gold);letter-spacing:.06em;
+}
+.steps h3{
+  font-family:var(--serif);font-weight:600;font-size:18px;
+  letter-spacing:.1em;margin-bottom:10px;
+}
+.steps p{font-size:15px;line-height:1.95}
+.steps p b{font-weight:600}
+.craft-visual{margin-top:clamp(30px,6vw,44px)}
+.craft-visual img{border-radius:2px;aspect-ratio:16/10;object-fit:cover}
+.craft-visual figcaption{font-size:12px;letter-spacing:.12em;color:var(--sub);margin-top:12px;text-align:right}
+
+/* --- 作品(墨黒ギャラリー) --- */
+.works{background:var(--sumi);color:var(--on-sumi)}
+.works .eyebrow{color:var(--gold-bright)}
+.works .sec-title{color:var(--on-sumi)}
+.works-group{margin-bottom:clamp(44px,9vw,64px)}
+.works-group:last-of-type{margin-bottom:0}
+.works-label{
+  font-family:var(--serif);font-weight:600;font-size:18px;
+  letter-spacing:.22em;color:var(--gold-bright);
+  margin-bottom:clamp(20px,4vw,28px);
+  display:flex;align-items:center;gap:14px;
+}
+.works-label::after{content:"";flex:1;height:1px;background:var(--hairline-dark)}
+.works-grid{display:grid;gap:clamp(14px,3vw,24px);grid-template-columns:repeat(2,1fr)}
+.work.wide{grid-column:1/-1}
+.work img{border-radius:2px;aspect-ratio:4/3;object-fit:cover}
+.work.tall img{aspect-ratio:4/5}
+.work.square img{aspect-ratio:1/1}
+.work h3{
+  font-family:var(--serif);font-weight:600;font-size:15px;
+  letter-spacing:.08em;margin:12px 0 4px;color:var(--on-sumi);
+}
+.work.wide h3{font-size:17px;margin-top:18px}
+.work p{color:var(--on-sumi-sub);font-size:13px;line-height:1.85}
+.work.wide p{font-size:14px}
+.works-more{margin-top:clamp(34px,7vw,48px);text-align:center}
+.works .btn-ghost{color:var(--on-sumi);border-color:var(--hairline-dark)}
+.works .btn-ghost:hover{border-color:var(--gold-bright);color:var(--gold-bright)}
+
+/* --- 和モダン提案 --- */
+.wamodern .palette{display:flex;gap:12px;margin:28px 0 10px}
+.wamodern .chip{width:46px;height:46px;border-radius:50%;border:1px solid var(--hairline)}
+.wamodern .palette-note{font-size:12px;letter-spacing:.12em;color:var(--sub);margin-bottom:24px}
+.wamodern p{margin-bottom:1.5em}
+.wamodern p strong{font-weight:600}
+.rough-slot{margin-top:clamp(28px,6vw,40px)}
+.rough-slot img{border-radius:2px}
+.rough-slot figcaption{font-size:12px;letter-spacing:.12em;color:var(--sub);margin-top:12px;text-align:right}
+
+/* --- 費用 --- */
+.fee{background:var(--wash)}
+.fee-table{border-top:1px solid var(--hairline);margin-top:8px}
+.fee-row{
+  display:flex;justify-content:space-between;gap:16px;
+  padding:22px 0;border-bottom:1px solid var(--hairline);
+}
+.fee-row .name{font-weight:500;letter-spacing:.08em;white-space:nowrap}
+.fee-row .desc{color:var(--sub);font-size:14px;text-align:right;max-width:58%;line-height:1.9}
+.fee-example{
+  margin-top:28px;padding:22px 24px;background:var(--paper);
+  border-left:2px solid var(--gold);border-radius:2px;
+  font-size:15px;line-height:2;
+}
+.fee-example b{font-weight:600}
+.fee-note{font-size:15px;margin-top:24px}
+.fee-note strong{font-weight:600}
+
+/* --- アトリエ(二人) --- */
+.atelier-grid{display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start}
+.atelier-grid img{border-radius:50%;aspect-ratio:1;object-fit:cover}
+.atelier-grid h3{font-family:var(--serif);font-weight:600;font-size:17px;letter-spacing:.12em;margin-bottom:10px}
+.atelier-grid p{font-size:14.5px;line-height:1.95}
+.atelier-note{
+  margin-top:32px;padding-top:24px;border-top:1px solid var(--hairline);
+  font-size:14.5px;line-height:2;
+}
+.atelier-note b{font-weight:600}
+@media (max-width:480px){.atelier-grid{grid-template-columns:92px 1fr;gap:18px}}
+
+/* --- CTA(墨黒) --- */
+.cta{background:var(--sumi);color:var(--on-sumi);text-align:center}
+.cta .sec-title{color:var(--on-sumi)}
+.cta .lead{color:var(--on-sumi-sub);margin-bottom:34px;font-size:15.5px}
+.cta .lead strong{color:var(--on-sumi);font-weight:500}
+.cta .btns{display:flex;flex-direction:column;gap:14px;max-width:340px;margin:0 auto}
+.cta .btn-ghost{color:var(--on-sumi);border-color:var(--hairline-dark)}
+.cta .btn-ghost:hover{border-color:var(--gold-bright);color:var(--gold-bright)}
+.cta .btn-note{color:var(--on-sumi-sub)}
+.cta .gold-rule{margin:0 auto 22px}
+
+/* --- フッター --- */
+footer{
+  background:var(--sumi);color:var(--on-sumi-sub);
+  padding:0 24px 56px;text-align:center;
+}
+footer .inner{border-top:1px solid var(--hairline-dark);padding-top:40px}
+footer .wordmark{
+  font-family:var(--serif);font-weight:600;font-size:13px;
+  letter-spacing:.4em;text-indent:.4em;color:var(--on-sumi);
+}
+footer p{font-size:12px;letter-spacing:.12em;margin-top:12px}
+footer a{text-decoration:none}
+footer .rakkan{margin:22px auto 0}
+
+/* --- お品書き(menu.html) --- */
+.menu-header{
+  background:var(--sumi);color:var(--on-sumi);text-align:center;
+  padding:56px 24px 48px;
+}
+.menu-header .wordmark{
+  font-family:var(--serif);font-weight:600;font-size:14px;
+  letter-spacing:.4em;text-indent:.4em;
+}
+.menu-header h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(24px,6vw,32px);letter-spacing:.16em;margin-top:26px;
+}
+.menu-header p{color:var(--on-sumi-sub);font-size:14px;letter-spacing:.14em;margin-top:14px}
+.menu-item{
+  display:grid;gap:clamp(20px,4vw,28px);
+  padding:clamp(40px,8vw,56px) 0;border-bottom:1px solid var(--hairline);
+}
+.menu-item:last-of-type{border-bottom:0}
+.menu-item img{border-radius:2px;aspect-ratio:4/3;object-fit:cover}
+.menu-item.tall img{aspect-ratio:4/5}
+.menu-item .num{
+  font-family:var(--serif);font-size:13px;color:var(--gold);letter-spacing:.2em;
+}
+.menu-item h2{
+  font-family:var(--serif);font-weight:600;font-size:clamp(20px,4.8vw,24px);
+  letter-spacing:.1em;margin:6px 0 14px;
+}
+.menu-item p{font-size:15px;line-height:2;margin-bottom:.8em}
+.menu-item .scale{
+  font-size:13.5px;color:var(--sub);
+  border-left:2px solid var(--gold);padding-left:14px;line-height:1.9;
+}
+@media (min-width:640px){
+  .menu-item{grid-template-columns:1fr 1fr;align-items:center}
+  .menu-item:nth-child(even) .menu-photo{order:2}
+}
