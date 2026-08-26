@@ -422,6 +422,12 @@ ul {
     line-height: 2;
 }
 
+.hero-note {
+    font-size: 12.5px;
+    color: var(--color-text-light);
+    margin-top: 16px;
+}
+
 @media screen and (max-width: 900px) {
     .img-1 { width: 70%; left: 10%; height: 60%; }
     .img-2 { width: 50%; right: 5%; bottom: 10%; height: 50%; }
@@ -641,6 +647,12 @@ ul {
     background-color: var(--color-primary);
     color: #fff;
     border-color: var(--color-primary);
+}
+
+.menu-note {
+    font-size: 12px;
+    color: var(--color-text-light);
+    margin-top: 18px;
 }
 
 @media screen and (max-width: 900px) {
@@ -1057,6 +1069,15 @@ ul {
     font-family: var(--font-en);
     font-size: 14px;
     letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.footer-reserve-bar p small {
+    display: block;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 5px;
+    letter-spacing: 0.05em;
 }
 
 .footer-reserve-btn {
